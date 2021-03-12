@@ -1,9 +1,9 @@
-declare let appManager: AppManagerPlugin.AppManager;
+declare let intentPlugin: IntentPlugin.Intent;
 
 export class Wallet {
     public static async sendSmartContractTransaction(payload: any): Promise<string> {
         let ret: { result: { status:string, txid: string }} =
-        await appManager.sendIntent("https://wallet.elastos.net/esctransaction", {
+        await intentPlugin.sendIntent("https://wallet.elastos.net/esctransaction", {
             payload: payload
         });
 

@@ -1,4 +1,4 @@
-declare let appManager: AppManagerPlugin.AppManager;
+declare let intentPlugin: IntentPlugin.Intent;
 declare let didManager: DIDPlugin.DIDManager;
 
 export class DID {
@@ -8,7 +8,7 @@ export class DID {
         return new Promise(async (resolve, reject)=>{
             try {
                 // No such credential, so we have to create one. Send an intent to get that from the did app
-                let res: { result: { credential: string } } = await appManager.sendIntent("https://did.elastos.net/appidcredissue", {
+                let res: { result: { credential: string } } = await intentPlugin.sendIntent("https://did.elastos.net/appidcredissue", {
                     appinstancedid: appInstanceDID
                 });
 

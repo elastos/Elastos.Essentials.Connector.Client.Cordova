@@ -32,6 +32,6 @@
     "@elastosfoundation/elastos-connectivity-sdk-cordova": "^1.0.0",
     "elastos-cordova-plugin-did": "git+https://github.com/elastos/Elastos.DID.Cordova.SDK.git",
     "elastos-cordova-plugin-hive": "git+https://github.com/elastos/Elastos.NET.Hive.Cordova.SDK.git",
-    "elastos-essentials-plugin-appmanager": "git+https://github.com/elastos/Elastos.Essentials.Plugins.Intent.git"
+    "elastos-cordova-plugin-intent": "git+https://github.com/elastos/Elastos.Cordova.Plugins.Intent.git"
   }
 }

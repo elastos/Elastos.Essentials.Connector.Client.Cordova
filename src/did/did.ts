@@ -2,6 +2,25 @@ declare let intentPlugin: IntentPlugin.Intent;
 declare let didManager: DIDPlugin.DIDManager;
 
 export class DID {
+    static getCredentials(claims: any): Promise<DIDPlugin.VerifiablePresentation> {
+        return new Promise(async (resolve, reject)=>{
+            let res: { result: { presentation: string } };
+            res = await intentPlugin.sendIntent("https://did.elastos.net/credaccess", {claims: claims});
+
+            if (!res || !res.result || !res.result.presentation) {
+                console.warn("Missing presentation. The operation was maybe cancelled.");
+                resolve(null);
+                return;
+            }
+
+            didManager.VerifiablePresentationBuilder.fromJson(res.result.presentation, (presentation)=>{
+                resolve(presentation);
+            }, (err)=>{
+                resolve(null);
+            });
+        });
+    }
+
     static generateAppIDCredential(appInstanceDID: string): Promise<DIDPlugin.VerifiableCredential> {
         console.log("Essentials: app ID Credential generation flow started");
 
@@ -23,7 +42,7 @@ export class DID {
                 resolve(credential);
             }
             catch (err) {
-                console.log("generateAppIDCredential() error:", err);
+                console.error("generateAppIDCredential() error:", err);
                 resolve(null);
             }
         });

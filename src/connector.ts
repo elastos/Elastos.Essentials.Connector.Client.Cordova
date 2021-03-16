@@ -10,7 +10,7 @@ export class EssentialsConnector implements Interfaces.Connectors.IConnector {
      */
 
     getCredentials(claims: any): Promise<DIDPlugin.VerifiablePresentation> {
-        throw new Error("Method not implemented.");
+        return DID.getCredentials(claims);
     }
 
     generateAppIdCredential(appInstanceDID: string): Promise<DIDPlugin.VerifiableCredential> {

@@ -4,7 +4,7 @@ declare let didManager: DIDPlugin.DIDManager;
 export class DID {
     static getCredentials(claims: any): Promise<DIDPlugin.VerifiablePresentation> {
         return new Promise(async (resolve, reject)=>{
-            let res: { result: { presentation: string } };
+            let res: { result: { presentation: DIDPlugin.VerifiablePresentation } };
             res = await intentPlugin.sendIntent("https://did.elastos.net/credaccess", {claims: claims});
 
             if (!res || !res.result || !res.result.presentation) {
@@ -13,11 +13,7 @@ export class DID {
                 return;
             }
 
-            didManager.VerifiablePresentationBuilder.fromJson(res.result.presentation, (presentation)=>{
-                resolve(presentation);
-            }, (err)=>{
-                resolve(null);
-            });
+            resolve(res.result.presentation);
         });
     }
 

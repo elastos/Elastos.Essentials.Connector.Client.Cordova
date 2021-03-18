@@ -1,6 +1,6 @@
 {
   "name": "@elastosfoundation/essentials-connector-cordova",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Elastos Essentials Connector for the Elastos Connectivity SDK.",
   "main": "dist/index.js",
   "types": "index.d.ts",

@@ -17,14 +17,15 @@ export class DID {
         });
     }
 
-    static generateAppIDCredential(appInstanceDID: string): Promise<DIDPlugin.VerifiableCredential> {
+    static generateAppIDCredential(appInstanceDID: string, appDID: string): Promise<DIDPlugin.VerifiableCredential> {
         console.log("Essentials: app ID Credential generation flow started");
 
         return new Promise(async (resolve, reject)=>{
             try {
                 // No such credential, so we have to create one. Send an intent to get that from the did app
                 let res: { result: { credential: string } } = await intentPlugin.sendIntent("https://did.elastos.net/appidcredissue", {
-                    appinstancedid: appInstanceDID
+                    appinstancedid: appInstanceDID,
+                    appdid: appDID
                 });
 
                 console.log("Got response for the appidcredissue intent", res);

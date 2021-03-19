@@ -13,8 +13,8 @@ export class EssentialsConnector implements Interfaces.Connectors.IConnector {
         return DID.getCredentials(claims);
     }
 
-    generateAppIdCredential(appInstanceDID: string): Promise<DIDPlugin.VerifiableCredential> {
-        return DID.generateAppIDCredential(appInstanceDID);
+    generateAppIdCredential(appInstanceDID: string, appDID: string): Promise<DIDPlugin.VerifiableCredential> {
+        return DID.generateAppIDCredential(appInstanceDID, appDID);
     }
 
     /**

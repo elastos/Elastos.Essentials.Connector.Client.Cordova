@@ -1,6 +1,6 @@
 {
   "name": "@elastosfoundation/essentials-connector-cordova",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Elastos Essentials Connector for the Elastos Connectivity SDK.",
   "main": "dist/index.js",
   "types": "index.d.ts",
@@ -29,7 +29,7 @@
     "web3-core": "1.2.9"
   },
   "devDependencies": {
-    "@elastosfoundation/elastos-connectivity-sdk-cordova": "^1.0.0",
+    "@elastosfoundation/elastos-connectivity-sdk-cordova": "^1.0.3",
     "elastos-cordova-plugin-did": "git+https://github.com/elastos/Elastos.DID.Cordova.SDK.git",
     "elastos-cordova-plugin-hive": "git+https://github.com/elastos/Elastos.NET.Hive.Cordova.SDK.git",
     "elastos-cordova-plugin-intent": "git+https://github.com/elastos/Elastos.Cordova.Plugins.Intent.git"

@@ -1,11 +1,13 @@
+import { GetCredentialsQuery } from "@elastosfoundation/elastos-connectivity-sdk-cordova/dist/did";
+
 declare let intentPlugin: IntentPlugin.Intent;
 declare let didManager: DIDPlugin.DIDManager;
 
 export class DID {
-    static getCredentials(claims: any): Promise<DIDPlugin.VerifiablePresentation> {
+    static getCredentials(query: GetCredentialsQuery): Promise<DIDPlugin.VerifiablePresentation> {
         return new Promise(async (resolve, reject)=>{
             let res: { result: { presentation: DIDPlugin.VerifiablePresentation } };
-            res = await intentPlugin.sendIntent("https://did.elastos.net/credaccess", {claims: claims});
+            res = await intentPlugin.sendIntent("https://did.elastos.net/credaccess", query);
 
             if (!res || !res.result || !res.result.presentation) {
                 console.warn("Missing presentation. The operation was maybe cancelled.");

@@ -1,4 +1,5 @@
 import { Interfaces } from "@elastosfoundation/elastos-connectivity-sdk-cordova";
+import { GetCredentialsQuery } from "@elastosfoundation/elastos-connectivity-sdk-cordova/dist/did";
 import { DID } from "./did/did";
 import { Wallet } from "./wallet/wallet";
 
@@ -9,8 +10,8 @@ export class EssentialsConnector implements Interfaces.Connectors.IConnector {
      * DID API
      */
 
-    getCredentials(claims: any): Promise<DIDPlugin.VerifiablePresentation> {
-        return DID.getCredentials(claims);
+    getCredentials(query: GetCredentialsQuery): Promise<DIDPlugin.VerifiablePresentation> {
+        return DID.getCredentials(query);
     }
 
     generateAppIdCredential(appInstanceDID: string, appDID: string): Promise<DIDPlugin.VerifiableCredential> {
@@ -21,7 +22,7 @@ export class EssentialsConnector implements Interfaces.Connectors.IConnector {
      * Wallet API
      */
 
-    async pay() {
+     async pay() {
         throw new Error("Method not implemented.");
     }
 

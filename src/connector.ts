@@ -6,6 +6,10 @@ import { Wallet } from "./wallet/wallet";
 export class EssentialsConnector implements Interfaces.Connectors.IConnector {
     public name: string = "essentials";
 
+    async getDisplayName(): Promise<string> {
+        return "Elastos Essentials";
+    }
+
     /**
      * DID API
      */

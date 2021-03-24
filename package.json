@@ -33,6 +33,9 @@
     "@elastosfoundation/elastos-connectivity-sdk-cordova": "^1.0.6"
   },
   "devDependencies": {
+    "@elastosfoundation/elastos-cordova-plugin-did": "^1.0.0",
+    "@elastosfoundation/elastos-cordova-plugin-hive": "^1.0.0",
+    "@elastosfoundation/elastos-cordova-plugin-intent": "^1.0.0",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
     "@rollup/plugin-typescript": "^8.2.0",

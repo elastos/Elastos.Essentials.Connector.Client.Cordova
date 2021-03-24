@@ -1,4 +1,4 @@
-import { PayQuery, TransactionResult } from "@elastosfoundation/elastos-connectivity-sdk-cordova/dist/wallet";
+import { PayQuery, TransactionResult } from "@elastosfoundation/elastos-connectivity-sdk-cordova";
 
 declare let intentPlugin: IntentPlugin.Intent;
 

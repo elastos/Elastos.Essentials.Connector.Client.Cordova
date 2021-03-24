@@ -1,4 +1,4 @@
-import { GetCredentialsQuery } from "@elastosfoundation/elastos-connectivity-sdk-cordova/dist/did";
+import { GetCredentialsQuery } from "@elastosfoundation/elastos-connectivity-sdk-cordova";
 
 declare let intentPlugin: IntentPlugin.Intent;
 declare let didManager: DIDPlugin.DIDManager;

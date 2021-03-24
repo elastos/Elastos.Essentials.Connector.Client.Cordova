@@ -1,8 +1,6 @@
-import { Interfaces } from "@elastosfoundation/elastos-connectivity-sdk-cordova";
-import { GetCredentialsQuery } from "@elastosfoundation/elastos-connectivity-sdk-cordova/dist/did";
+import { Interfaces, GetCredentialsQuery,  PayQuery, TransactionResult} from "@elastosfoundation/elastos-connectivity-sdk-cordova";
 import { DID } from "./did/did";
 import { Wallet } from "./wallet/wallet";
-import type {PayQuery, TransactionResult } from "@elastosfoundation/elastos-connectivity-sdk-cordova/dist/wallet";
 
 export class EssentialsConnector implements Interfaces.Connectors.IConnector {
     public name: string = "essentials";

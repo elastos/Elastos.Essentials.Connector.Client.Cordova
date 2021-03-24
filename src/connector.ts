@@ -2,6 +2,7 @@ import { Interfaces } from "@elastosfoundation/elastos-connectivity-sdk-cordova"
 import { GetCredentialsQuery } from "@elastosfoundation/elastos-connectivity-sdk-cordova/dist/did";
 import { DID } from "./did/did";
 import { Wallet } from "./wallet/wallet";
+import type {PayQuery, TransactionResult } from "@elastosfoundation/elastos-connectivity-sdk-cordova/dist/wallet";
 
 export class EssentialsConnector implements Interfaces.Connectors.IConnector {
     public name: string = "essentials";
@@ -26,8 +27,8 @@ export class EssentialsConnector implements Interfaces.Connectors.IConnector {
      * Wallet API
      */
 
-     async pay() {
-        throw new Error("Method not implemented.");
+    async pay(query: PayQuery): Promise<TransactionResult>  {
+        return Wallet.pay(query);
     }
 
     async voteForDPoS() {

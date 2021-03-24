@@ -1,8 +1,5 @@
 node_modules/
 package-lock.json
 dist/
-<<<<<<< HEAD
 .DS_Store
-=======
 dist.esm/
->>>>>>> 179f99d... CU-qd5wve Added rollup to build cjs and esm versions of this connector

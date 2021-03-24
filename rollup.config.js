@@ -24,6 +24,7 @@ export default {
             file: 'dist.esm/index.js'
         }
     ],
+	external: ['@elastosfoundation/elastos-connectivity-sdk-cordova'],
 	plugins: [
 		svelte({
             preprocess: sveltePreprocess({ sourceMap: !production }),

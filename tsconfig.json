@@ -4,10 +4,12 @@
       "declaration": true,
       "outDir": "dist",
       "module": "es2020",
+      "target": "es2020",
       "moduleResolution": "node",
       "typeRoots": [
         "node_modules",
       ],
+      "sourceMap": true,
       "types": [
         "web3-core/types",
         "elastos-cordova-plugin-did",
@@ -15,5 +17,6 @@
         "elastos-cordova-plugin-intent"
       ]
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*"],
+    "exclude": ["dist/*", "dist.esm/*"]
 }

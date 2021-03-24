@@ -1,10 +1,10 @@
-import { GetCredentialsQuery } from "@elastosfoundation/elastos-connectivity-sdk-cordova";
+import { DID as SDKDID } from "@elastosfoundation/elastos-connectivity-sdk-cordova";
 
 declare let intentPlugin: IntentPlugin.Intent;
 declare let didManager: DIDPlugin.DIDManager;
 
 export class DID {
-    static getCredentials(query: GetCredentialsQuery): Promise<DIDPlugin.VerifiablePresentation> {
+    static getCredentials(query: SDKDID.GetCredentialsQuery): Promise<DIDPlugin.VerifiablePresentation> {
         return new Promise(async (resolve, reject)=>{
             let res: { result: { presentation: DIDPlugin.VerifiablePresentation } };
             res = await intentPlugin.sendIntent("https://did.elastos.net/credaccess", query);

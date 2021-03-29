@@ -1,12 +1,14 @@
 {
   "name": "@elastosfoundation/essentials-connector-cordova",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Elastos Essentials Connector for the Elastos Connectivity SDK.",
   "main": "dist/index.js",
   "module": "dist.esm/index.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist/ dist.esm/",
     "prepublish": "npm run build"
   },
   "repository": {

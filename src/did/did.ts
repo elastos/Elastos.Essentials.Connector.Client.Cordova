@@ -1,13 +1,13 @@
 import { DID as SDKDID } from "@elastosfoundation/elastos-connectivity-sdk-cordova";
 
-declare let intentPlugin: IntentPlugin.Intent;
+declare let intentManager: IntentPlugin.IntentManager;
 declare let didManager: DIDPlugin.DIDManager;
 
 export class DID {
     static getCredentials(query: SDKDID.GetCredentialsQuery): Promise<DIDPlugin.VerifiablePresentation> {
         return new Promise(async (resolve, reject)=>{
             let res: { result: { presentation: DIDPlugin.VerifiablePresentation } };
-            res = await intentPlugin.sendIntent("https://did.elastos.net/credaccess", query);
+            res = await intentManager.sendIntent("https://did.elastos.net/credaccess", query);
 
             if (!res || !res.result || !res.result.presentation) {
                 console.warn("Missing presentation. The operation was maybe cancelled.");
@@ -25,7 +25,7 @@ export class DID {
         return new Promise(async (resolve, reject)=>{
             try {
                 // No such credential, so we have to create one. Send an intent to get that from the did app
-                let res: { result: { credential: string } } = await intentPlugin.sendIntent("https://did.elastos.net/appidcredissue", {
+                let res: { result: { credential: string } } = await intentManager.sendIntent("https://did.elastos.net/appidcredissue", {
                     appinstancedid: appInstanceDID,
                     appdid: appDID
                 });

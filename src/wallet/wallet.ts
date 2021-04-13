@@ -1,11 +1,11 @@
-import { PayQuery, TransactionResult } from "@elastosfoundation/elastos-connectivity-sdk-cordova";
+import { Wallet as ConnectivityWallet } from "@elastosfoundation/elastos-connectivity-sdk-cordova";
 
 declare let intentManager: IntentPlugin.IntentManager;
 
 export class Wallet {
-    static pay(query: PayQuery): Promise<TransactionResult> {
+    static pay(query: ConnectivityWallet.PayQuery): Promise<ConnectivityWallet.TransactionResult> {
         return new Promise(async (resolve, reject)=>{
-            let res: { result: TransactionResult };
+            let res: { result: ConnectivityWallet.TransactionResult };
             res = await intentManager.sendIntent("https://wallet.elastos.net/pay", query);
 
             if (!res || !res.result) {

@@ -9,7 +9,9 @@ TODO
 
 ## Installation
 
+```npm i --save @elastosfoundation/elastos-connectivity-sdk-cordova```
 ```npm i --save @elastosfoundation/essentials-connector-cordova```
+```cordova plugin add @elastosfoundation/elastos-cordova-plugin-intent```
 
 ## Build
 

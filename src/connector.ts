@@ -25,7 +25,7 @@ export class EssentialsConnector implements Interfaces.Connectors.IConnector {
      * Wallet API
      */
 
-    async pay(query: ConnectivityWallet.PayQuery): Promise<ConnectivityDID.TransactionResult>  {
+    async pay(query: ConnectivityWallet.PayQuery): Promise<ConnectivityWallet.TransactionResult>  {
         return Wallet.pay(query);
     }
 

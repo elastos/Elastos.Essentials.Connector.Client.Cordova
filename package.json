@@ -1,6 +1,6 @@
 {
   "name": "@elastosfoundation/essentials-connector-cordova",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Elastos Essentials Connector for the Elastos Connectivity SDK.",
   "main": "dist/index.js",
   "module": "dist.esm/index.js",
@@ -34,7 +34,7 @@
     "web3-core": "1.2.9"
   },
   "peerDependencies": {
-    "@elastosfoundation/elastos-connectivity-sdk-cordova": "^1.0.19"
+    "@elastosfoundation/elastos-connectivity-sdk-cordova": "^1.0.23"
   },
   "devDependencies": {
     "@elastosfoundation/elastos-cordova-plugin-did": "^1.0.0",

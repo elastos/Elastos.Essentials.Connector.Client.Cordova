@@ -1,22 +1,26 @@
 {
-    "compilerOptions": {
-      "esModuleInterop": true,
-      "declaration": true,
-      "outDir": "dist",
-      "module": "es2020",
-      "target": "es2020",
-      "moduleResolution": "node",
-      "typeRoots": [
-        "node_modules",
-      ],
-      "sourceMap": true,
-      "types": [
-        "web3-core/types",
-        "@elastosfoundation/elastos-cordova-plugin-did",
-        "@elastosfoundation/elastos-cordova-plugin-hive",
-        "@elastosfoundation/elastos-cordova-plugin-intent"
-      ]
-    },
-    "include": ["src/**/*"],
-    "exclude": ["dist/*", "dist.esm/*"]
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "declaration": true,
+    "outDir": "dist",
+    "module": "es2020",
+    "target": "es2020",
+    "moduleResolution": "node",
+    "typeRoots": [
+      "node_modules",
+    ],
+    "sourceMap": true,
+    "types": [
+      "web3-core/types",
+      "@elastosfoundation/elastos-cordova-plugin-did",
+      "@elastosfoundation/elastos-cordova-plugin-intent"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "dist/*",
+    "dist.esm/*"
+  ]
 }

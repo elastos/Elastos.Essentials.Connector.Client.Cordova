@@ -1,4 +1,4 @@
-import { Interfaces, Wallet as ConnectivityWallet, DID as ConnectivityDID } from "@elastosfoundation/elastos-connectivity-sdk-cordova";
+import { DID as ConnectivityDID, Interfaces, Wallet as ConnectivityWallet } from "@elastosfoundation/elastos-connectivity-sdk-cordova";
 import { DID } from "./did/did";
 import { Wallet } from "./wallet/wallet";
 
@@ -17,6 +17,10 @@ export class EssentialsConnector implements Interfaces.Connectors.IConnector {
         return DID.getCredentials(query);
     }
 
+    requestCredentials(request: ConnectivityDID.CredentialDisclosureRequest): Promise<DIDPlugin.VerifiablePresentation> {
+        return DID.requestCredentials(request);
+    }
+
     generateAppIdCredential(appInstanceDID: string, appDID: string): Promise<DIDPlugin.VerifiableCredential> {
         return DID.generateAppIDCredential(appInstanceDID, appDID);
     }
@@ -25,7 +29,7 @@ export class EssentialsConnector implements Interfaces.Connectors.IConnector {
      * Wallet API
      */
 
-    async pay(query: ConnectivityWallet.PayQuery): Promise<ConnectivityWallet.TransactionResult>  {
+    async pay(query: ConnectivityWallet.PayQuery): Promise<ConnectivityWallet.TransactionResult> {
         return Wallet.pay(query);
     }
 

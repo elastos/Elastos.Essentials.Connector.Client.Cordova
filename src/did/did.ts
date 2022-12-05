@@ -5,7 +5,7 @@ declare let didManager: DIDPlugin.DIDManager;
 
 export class DID {
     static getCredentials(query: SDKDID.GetCredentialsQuery): Promise<DIDPlugin.VerifiablePresentation> {
-        return new Promise(async (resolve, reject)=>{
+        return new Promise(async (resolve, reject) => {
             let res: { result: { presentation: DIDPlugin.VerifiablePresentation } };
             res = await intentManager.sendIntent("https://did.elastos.net/credaccess", query);
 
@@ -19,10 +19,25 @@ export class DID {
         });
     }
 
+    static requestCredentials(disclosureRequest: SDKDID.CredentialDisclosureRequest): Promise<DIDPlugin.VerifiablePresentation> {
+        return new Promise(async (resolve, reject) => {
+            let res: { result: { presentation: DIDPlugin.VerifiablePresentation } };
+            res = await intentManager.sendIntent("https://did.elastos.net/requestcredentials", disclosureRequest);
+
+            if (!res || !res.result || !res.result.presentation) {
+                console.warn("Missing presentation. The operation was maybe cancelled.", res);
+                resolve(null);
+                return;
+            }
+
+            resolve(res.result.presentation);
+        });
+    }
+
     static generateAppIDCredential(appInstanceDID: string, appDID: string): Promise<DIDPlugin.VerifiableCredential> {
         console.log("Essentials: app ID Credential generation flow started");
 
-        return new Promise(async (resolve, reject)=>{
+        return new Promise(async (resolve, reject) => {
             try {
                 // No such credential, so we have to create one. Send an intent to get that from the did app
                 let res: { result: { credential: string } } = await intentManager.sendIntent("https://did.elastos.net/appidcredissue", {

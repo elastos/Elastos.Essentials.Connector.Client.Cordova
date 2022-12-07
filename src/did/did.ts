@@ -22,7 +22,9 @@ export class DID {
     static requestCredentials(disclosureRequest: SDKDID.CredentialDisclosureRequest): Promise<DIDPlugin.VerifiablePresentation> {
         return new Promise(async (resolve, reject) => {
             let res: { result: { presentation: DIDPlugin.VerifiablePresentation } };
-            res = await intentManager.sendIntent("https://did.elastos.net/requestcredentials", disclosureRequest);
+            res = await intentManager.sendIntent("https://did.elastos.net/requestcredentials", {
+                request: disclosureRequest
+            });
 
             if (!res || !res.result || !res.result.presentation) {
                 console.warn("Missing presentation. The operation was maybe cancelled.", res);
